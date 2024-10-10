@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #005f99; /* couleur de fond de la sidebar */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white; /* couleur du texte en blanc */
+    text-decoration: none; /* supprime le soulignement */
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    color: #ffa500; /* couleur au survol */
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9; /* couleur de fond du contenu principal */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    background: #ffffff; /* couleur de fond du formulaire */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #005f99; /* couleur du bouton */
+    color: white; /* couleur du texte du bouton */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004080; /* couleur au survol du bouton */
+}
+
+.offer {
+    background: #e6f7ff; /* couleur de fond pour les offres */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}

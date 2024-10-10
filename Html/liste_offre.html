@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des offres</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="liste_offre.html">Liste des offres</a></li>
+            <li><a href="faire_offre.html">Faire une offre</a></li>
+            <li><a href="parametres.html">Paramètres</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="status-toggle">
+            <button class="active">Pourvue</button>
+            <button>Non pourvue</button>
+        </div>
+
+        <div class="offers" id="offerList">
+        </div>
+    </div>
+
+    <script>
+        const offers = JSON.parse(localStorage.getItem('offers')) || [];
+
+        const offerList = document.getElementById('offerList');
+
+        offers.forEach(function(offer) {
+            const offerDiv = document.createElement('div');
+            offerDiv.classList.add('offer');
+            offerDiv.innerHTML = `<p><strong>Date :</strong> ${offer.date} | <strong>Période :</strong> ${offer.periode} | <strong>Service :</strong> ${offer.service}</p>`;
+            offerList.appendChild(offerDiv);
+        });
+    </script>
+</body>
+</html>

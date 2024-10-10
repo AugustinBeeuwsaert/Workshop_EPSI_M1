@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire une offre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="liste_offre.html">Liste des offres</a></li>
+            <li><a href="faire_offre.html">Faire une offre</a></li>
+            <li><a href="parametres.html">Paramètres</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="form-container">
+            <h2>Faire une offre</h2>
+
+            <form id="offerForm">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="periode">Période</label>
+                <select id="periode" name="periode" required>
+                    <option value="jour">Jour</option>
+                    <option value="nuit">Nuit</option>
+                </select>
+
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="rhumatologie">Rhumatologie</option>
+                    <option value="gastro-entero">Gastro-entero</option>
+                </select>
+
+                <button type="submit">Valider</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Définit la date minimale pour le champ date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        document.getElementById('offerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const date = document.getElementById('date').value;
+            const periode = document.getElementById('periode').value;
+            const service = document.getElementById('service').value;
+
+            const newOffer = {
+                date: date,
+                periode: periode,
+                service: service
+            };
+
+            let offers = JSON.parse(localStorage.getItem('offers')) || [];
+            offers.push(newOffer);
+            localStorage.setItem('offers', JSON.stringify(offers));
+            window.location.href = 'liste_offre.html';
+        });
+    </script>
+</body>
+</html>

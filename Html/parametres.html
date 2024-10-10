@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="liste_offres.html">Liste des offres</a></li>
+            <li><a href="faire_offre.html">Faire une offre</a></li>
+            <li><a href="parametres.html">Paramètres</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="settings-container">
+            <h2>Paramètres</h2>
+
+            <form action="#" method="post">
+                <label for="notification">Notifications</label>
+                <select id="notification" name="notification">
+                    <option value="enabled">Activé</option>
+                    <option value="disabled">Désactivé</option>
+                </select>
+
+                <label for="theme">Thème</label>
+                <select id="theme" name="theme">
+                    <option value="light">Clair</option>
+                    <option value="dark">Sombre</option>
+                </select>
+
+                <label for="language">Langue</label>
+                <select id="language" name="language">
+                    <option value="francais">Français</option>
+                    <option value="anglais">Anglais</option>
+                </select>
+
+                <button type="submit">Sauvegarder</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
